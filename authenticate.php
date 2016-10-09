@@ -53,11 +53,11 @@
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 							exit();
 					    }
-
-					    $response = $con->query("CREATE TABLE tb_$pass ((id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
+                        $superemail = md5($email);
+					    $response = $con->query("CREATE TABLE tb_$superemail ((id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
 					    if(!response) {
-					        die("AHHHHH!");
-					        exit();
+					        header('Location: http://13.66.61.179/register.php?error="bad_pass"');
+                            exit();
 					    }
 						$_SESSION['first']=$fname;
 						$_SESSION['last']=$lname;
