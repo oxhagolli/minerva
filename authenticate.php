@@ -40,7 +40,10 @@
 							header('Location: http://13.66.61.179/register.php?error="format"');
 						}
 						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
+
+						    echo "<script>console.log('HARAMBE')</script>";
 						if($sql === false) {
+						    echo "<script>console.log('AYYY')</script>";
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 					    }
 						$_SESSION['email'] = $email;
