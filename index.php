@@ -15,9 +15,11 @@
 		<title>Minerva</title>
 	</head>
 	<body>
-	    if(isset($_SESSION['email'])) {
-            header('Location: http://13.66.61.179/login.php');
-        }
+	    <?php
+            if(isset($_SESSION['email'])) {
+                header('Location: http://13.66.61.179/login.php');
+            }
+        ?>
 		<ul class="sidebar" style="background-color: white; padding: 0; margin: 0; text-align: center; border-right: 1px solid #ccc; height: 100vh; position: absolute;">
 			<div style="padding-top: 55px" align="center">
 				<!-- First Character from the database goes here -->
