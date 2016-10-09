@@ -72,7 +72,7 @@
 		  theme: 'snow'
 		});
 		<?php $string = "HELLO" ?>
-		quill.setContents({"ops":[{"attributes":{"underline":true},},{"attributes":{"header":1},"insert":"\n"},{"insert":"<?php $string ?>"}]});
+		quill.setContents({"ops":[{"insert":"<?php $string ?>"}]});
 
 		var form = document.querySelector('form');
 		form.onsubmit = function() {
