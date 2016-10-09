@@ -19,7 +19,7 @@ html, body {
 	max-width: 100%;
 	overflow-x: hidden;
 }
-article,aside,details,figcaption,figure,footer,header,main,menu,nav,section,summary {
+article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,section,summary {
 	display: block;
 }
 audio,canvas,video {
@@ -346,7 +346,8 @@ i.color-circle {
 
 .sidebar {
 	list-style-type: none;
-	height: 100vh;
+	top: 4vh;
+	height: 90vh;
 	width: 15%;
 }
 .sidebar ul {
@@ -711,6 +712,10 @@ i.color-circle {
 .white, .white-hover:hover, .white-active {
 	background-color: #ecf0f1 !important;
 	color: #2c3e50 !important;
+}
+.black, .black-hover:hover, .black-active {
+	background-color: #000 !important;
+	color: #FFF !important;
 }
 .dark-white, .dark-white:hover, .dark-white-active {
 	background-color: #bdc3c7 !important;

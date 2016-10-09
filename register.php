@@ -16,9 +16,10 @@
 	</head>
 	<body>
 		<?php
-                        if(isset($_SESSION['email']))
-                                header('Location: http://13.66.61.179/');
-                ?>
+            if(isset($_SESSION['email']))
+                header('Location: http://13.66.61.179/');
+        ?>
+        <img src="header.png" class="p-left" style="width: 125px; top: 0px; left: 0px;">
 		<div class="section group">
 			<div class="col c-1-1 padding-center" align="center">
                 <form action="authenticate.php" method="post">
@@ -28,8 +29,8 @@
                     <input type="text" name="email" placeholder="Email" class="textbox round m-bottom m-16">
                     <input type="text" name="url" placeholder="Facebook Profile URL" class="textbox round m-bottom m-16">
                     <input type="text" name="pass" placeholder="Password" class="textbox round m-bottom m-16">
-                    <input type="submit" name="action" value="Register" class="btn green border-dark-green m-top">
-                    <a href="login.html" class="btn blue border-dark-blue m-top">Login</a>
+                    <input type="submit" name="action" value="Register" class="btn black m-top" style="border: 0;">
+                    <a href="login.html" class="btn black m-top" style="border: 0;">Login</a>
                 </form>
 			</div>
 		</div>
