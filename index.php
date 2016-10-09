@@ -31,7 +31,7 @@
 			<li><a href="mailto:email" class="black-hover"><h3>Email</h3></a></li>
 			<li><a href="http://facebook.com/facebookurl" class="black-hover"><h3>Facebook</h3></a></li>
 			<li><button type="navigate" onclick="window.location = 'entry.php'" class="btn black m-top" style="border: 0;">New Entry</button></li>
-			<li><button type="submit" class="btn black m-top" style="border: 0;">Logout</button></li>
+			<li><button type="submit" action="logout.php" class="btn black m-top" style="border: 0;">Logout</button></li>
 
 		</ul>
 		<ul class="navbar" style="background-color: white; padding: 0; text-align: center; border-bottom: 1px solid #ccc; width: 100vw; position: absolute">
