@@ -27,7 +27,7 @@
 				<form action="authenticate.php" method="post">
 					<h1>Login</h1>
 					<input type="text" name="email" placeholder="Email" class="textbox round m-bottom m-16" />
-					<input type="pass" name="password" placeholder="Password" class="textbox round m-bottom m-16" />
+					<input type="password" name="pass" placeholder="Password" class="textbox round m-bottom m-16" />
 					<input type="submit" name="action" value="Login" class="btn black m-top" style="border: 0;" />
 					<a href="register.php" class="btn black m-top" style="border: 0;">Register</a>
 				</form>
