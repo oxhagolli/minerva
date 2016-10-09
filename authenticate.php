@@ -25,7 +25,7 @@
 							header('Location: http://13.66.61.179/login.php?error="format"');
 							exit();
 						}
-						$sql = $con->query("SELECT email, password FROM users WHERE email='$email' AND password='$pass';");
+						$sql = $con->query("SELECT * FROM users WHERE email='$email' AND password='$pass';");
 						if ($sql->num_rows > 0) {
 							$_SESSION['email']=$email;
 							header('Location: http://13.66.61.179/');
@@ -46,7 +46,7 @@
 						}
 						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
 
-						if($sql === false) {
+						if(!$sql) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 							exit();
 					    }
