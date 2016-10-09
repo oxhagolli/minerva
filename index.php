@@ -40,30 +40,34 @@
 		</ul>
 
 		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">
+			            <a href='entry.php?id=1' class="orens">
+                            <div class='col c-1-1 padding-center m-right' style='border: 1px solid #ccc; width: 1190px;'>
+                                <h3 style='padding-left:10px;'><strong>10/9/2016 9:00AM</strong>backing, sticky material, way, edge, light strand, dust covered TV, sticky strip, thats, lights, wont, huge TVs, problem people, hairs, inches, wasnt, sides, dark spots, arms, issues, center, time, things</h3>
+                            </div><br/>
+            			</a>
+            			<a href='entry.php?id=2' class="orens">
+                            <div class='col c-1-1 padding-center m-right' style='border: 1px solid #ccc; width: 1190px;'>
+                                <h3 style='padding-left:10px;'><strong>10/9/2016 8:30AM</strong>pictures dont, bright TV, wall, sides, white light, nice white glow, couple of strands, TVs, product, camera, dark, brightness justice, things, fiance, honesty, fact, problem, corner, reason, reference, lights</h3>
+                            </div><br/>
+                        </a>
+                        <a href='entry.php?id=3' class="patrick">
+                                                    <div class='col c-1-1 padding-center m-right' style='border: 1px solid #ccc; width: 1190px;'>
+                                                        <h3 style='padding-left:10px;'><strong>10/9/2016 7:30AM</strong> VR headset, real person, real review, dont, experience, introduction, bucks</h3>
+                                                    </div><br/>
+                                    			</a>
+                                    			<a href='entry.php?id=4' class="patrick">
+                                                    <div class='col c-1-1 padding-center m-right' style='border: 1px solid #ccc; width: 1190px;'>
+                                                        <h3 style='padding-left:10px;'><strong>10/9/2016 7:48AM</strong>continuous strip, attachment strip, areas, TV USB port, eye strain, functionality, larger HD TVs, benefit of ambient light, degree angles, design, lit environment, brightness, lights, thing, adhesive, Plugging, small bulbs, sides, corners, quality, places, darkened room, creasing, accommodation, reviews, hour, sensor, idea, size, tape</h3>
+                                                    </div><br/>
+                                                </a>
 			<?php
-			    $host = getenv('localhost');
-            	$name = getenv('DB_NAME');
-                $user = getenv('DB_USER');
-            	$pass = getenv('DB_PASS');
-            	$con = new mysqli($host, $user, $pass, $name);
-            	if($con) {
-            	    $tbl = $_SESSION['first'];
-            	    $sql = $con->query("SELECT time, keywords FROM $tbl;");
-            		foreach($sql->fetch_array() as $row) {
-            		    $tstamp = $row[0];
-            		    $keywords = $row[1];
-            		    echo "<a href='entry.php/id=?$tstamp'>";
-            		    echo "<div class='col c-1-1 padding-center m-right' style='border: 1px solid #ccc; width: 1190px;'>";
-            		    echo "<h3 style='padding-left:10px;'><strong>$tstamp</strong> $keywords </h3>";
-            		    echo "</div><br/>";
-            		    echo "</a>";
-            		}
-            	}
-            	else {
-            		echo "Error: Unable to connect to MySQL.";
-            		echo "Error no: " . mysqli_connect_errno();
-            		echo "Error: " . mysqli_connect_error();
-            	}
+			    $tbl = $_SESSION['first'];
+			    if($tbl != "Orens"){
+			        echo "<style>.orens{visibility:hidden;}</style>";
+			    }
+			    else{
+			        echo "<style>.patrick{visibility:hidden;}</style>";
+			    }
 			?>
 		</div>
 	</body>

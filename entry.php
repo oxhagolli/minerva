@@ -32,16 +32,12 @@
 					<i class="color-circle black">55</i>
 				</div>
 				<!-- THIS IS WHERE YOU PUT PEOPLE WHO SCORED SIMILARLY BASED OFF OF SCORE AND CONTENT -->
-				<li><a href="#" class="black-hover">Patrick -- 55</a></li>
-				<li><a href="#" class="black-hover">Patrick -- 55</a></li>
-				<li><a href="#" class="black-hover">Patrick -- 55</a></li>
-				<li><a href="#" class="black-hover">Patrick -- 55</a></li>
 				<li><button type="submit" class="btn black m-top" style="border: 0;">Submit</button></li>
 				<li><button type="back" onclick="window.location = 'index.php'" class="btn black m-top" style="border: 0;">Back</button></li>
 			</ul>
 		</navbar>	
 		<input name="about" type="hidden">
-		<div id="editor" style="margin-left: 15%;">
+		<div id="editor" style="margin-left: 15%;height: 100vh;">
 			<!-- FILL IN THE CONTENT IF IT ISN'T A NEW JOURNAL ENTRY -->
 		</div>
 	</form>
