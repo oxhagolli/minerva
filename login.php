@@ -15,13 +15,17 @@
 		</style>
 	</head>
 	<body>
+		<?php
+			if(isset($_SESSION['email']))
+				header('Location: http://13.66.61.179/');
+		?>
 		<div class="section group">
 			<div class="col c-1-1 padding-center" align="center">
 				<form action="authenticate.php" method="post">
 					<h1>Login</h1>
 					<input type="text" placeholder="Email" class="textbox round m-bottom m-16" />
 					<input type="text" placeholder="Password" class="textbox round m-bottom m-16" />
-					<input type="submit" value="Login" class="btn green border-dark-green m-top" />
+					<input type="submit" name="action" value="Login" class="btn green border-dark-green m-top" />
 					<a href="register.html" class="btn blue border-dark-blue m-top">Register</a>
 				</form>
 			</div>
