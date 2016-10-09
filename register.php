@@ -30,7 +30,7 @@
                     <input type="text" name="last" placeholder="Last Name" class="textbox round m-bottom m-16">
                     <input type="text" name="email" placeholder="Email" class="textbox round m-bottom m-16">
                     <input type="text" name="url" placeholder="Facebook Profile URL" class="textbox round m-bottom m-16">
-                    <input type="text" name="pass" placeholder="Password" class="textbox round m-bottom m-16">
+                    <input type="password" name="pass" placeholder="Password" class="textbox round m-bottom m-16">
                     <input type="submit" name="action" value="Register" class="btn black m-top" style="border: 0;">
                     <a href="login.php" class="btn black m-top" style="border: 0;">Login</a>
                 </form>
