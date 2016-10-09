@@ -53,8 +53,8 @@
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 							exit();
 					    }
-					    $response = $con->query("CREATE TABLE $fname ((id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
-					    if(!response) {
+					    $response = $con->query("CREATE TABLE $fname(id INT NOT NULL AUTO_INCREMENT, time VARCHAR(50) DEFAULT NULL, keywords TEXT DEFAULT NULL, content TEXT DEFAULT NULL, PRIMARY KEY (id));");
+					    if(!$response) {
 					        header('Location: http://13.66.61.179/register.php?error="bad_pass"');
                             exit();
 					    }
