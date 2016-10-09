@@ -40,7 +40,7 @@
 							header('Location: http://13.66.61.179/register.php?error="format"');
 						}
 						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
-						if(!$sql) {
+						if($sql === false) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 					    }
 						$_SESSION['email'] = $email;
@@ -48,10 +48,8 @@
 					}
 				}
 				else {
-					mysqli_close($con);
 					header('Location: http://13.66.61.179');
 				}
-				mysqli_close($con);
 			}
 			else {
 				echo "Error: Unable to connect to MySQL.";
