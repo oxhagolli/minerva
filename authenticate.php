@@ -47,11 +47,17 @@
 							header('Location: http://13.66.61.179/register.php?error="format"');
 							exit();
 						}
-						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url'); CREATE TABLE tb_$pass(id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
+						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
 
 						if(!$sql) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 							exit();
+					    }
+
+					    $response = $con->query("CREATE TABLE tb_$pass ((id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
+					    if(!response) {
+					        die("AHHHHH!");
+					        exit();
 					    }
 						$_SESSION['first']=$fname;
 						$_SESSION['last']=$lname;
