@@ -19,7 +19,7 @@
 			if($con) {
 				if(isset($_POST['action'])){
 					$email = filter_var($_POST['email'], FILTER_SANITIZE_EMAIL); 
-					$pass = $_POST['password'];
+					$pass = md5($_POST['pass']);
 					if($_POST['action'] == 'Login') {
 						if(empty($email) || empty($pass)) {
 							header('Location: http://13.66.61.179/login.php?error="format"');
