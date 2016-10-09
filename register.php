@@ -16,8 +16,9 @@
 	</head>
 	<body>
 		<?php
-            if(isset($_SESSION['email']))
+            if(isset($_SESSION['email'])) {
                 header('Location: http://13.66.61.179/');
+            }
         ?>
         <img src="header.png" class="p-left" style="width: 125px; top: 0px; left: 0px;">
 		<div class="section group">
