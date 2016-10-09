@@ -29,7 +29,7 @@
 					<input type="text" placeholder="Email" class="textbox round m-bottom m-16" />
 					<input type="text" placeholder="Password" class="textbox round m-bottom m-16" />
 					<input type="submit" name="action" value="Login" class="btn black m-top" style="border: 0;" />
-					<a href="register.html" class="btn black m-top" style="border: 0;">Register</a>
+					<a href="register.php" class="btn black m-top" style="border: 0;">Register</a>
 				</form>
                 <?php
                     if (isset($_GET['error'])){

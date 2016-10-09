@@ -32,7 +32,7 @@
                     <input type="text" name="url" placeholder="Facebook Profile URL" class="textbox round m-bottom m-16">
                     <input type="text" name="pass" placeholder="Password" class="textbox round m-bottom m-16">
                     <input type="submit" name="action" value="Register" class="btn black m-top" style="border: 0;">
-                    <a href="login.html" class="btn black m-top" style="border: 0;">Login</a>
+                    <a href="login.php" class="btn black m-top" style="border: 0;">Login</a>
                 </form>
                 <?php
                     if (isset($_GET['error'])){
