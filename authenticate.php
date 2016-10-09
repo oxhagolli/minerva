@@ -47,11 +47,12 @@
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 					    }
 						$_SESSION['email'] = $email;
-						header('Location: http://13.66.61.179/');
+						//header('Location: http://13.66.61.179/');
 					}
 				}
 				else {
-					header('Location: http://13.66.61.179');
+				    echo "<script>console.log('OH BOY')</script>";
+					//header('Location: http://13.66.61.179');
 				}
 			}
 			else {
