@@ -1,63 +1,52 @@
-<DOCTYPE html>
-	<html>
+<!DOCTYPE html>
+<html>
 	<head>
-		<link rel="stylesheet" type="text/css" href="style.css">
+	    <meta charset="utf-8" />
+		<link rel="stylesheet" type="text/css" href="assets/style/style.css">
 		<!-- Overrides -->
 		<style>
 			body {
 				background-color: #FFF;
 			}
+			.sidebar li a {
+				padding: 0;
+			}
 		</style>
 		<title>Minerva</title>
-		<!-- Quill Dependancys. For the editor -->
-		<!-- Theme included stylesheets -->
-		<link href="http://cdn.quilljs.com/1.0.6/quill.snow.css" rel="stylesheet">
-		<link href="http://cdn.quilljs.com/1.0.6/quill.bubble.css" rel="stylesheet">
-
-		<!-- Core build with no theme, formatting, non-essential modules -->
-		<link href="http://cdn.quilljs.com/1.0.6/quill.core.css" rel="stylesheet">
-		<script src="http://cdn.quilljs.com/1.0.6/quill.core.js" type="text/javascript"></script>
-		<script>
-			var d = new Date();
-			document.getElementById("title").innerHTML = d;
-		</script>
 	</head>
 	<body>
-		<div id="editor">
-			<p id="title"></p>
+	    if(isset($_SESSION['email'])) {
+            header('Location: http://13.66.61.179/login.php');
+        }
+		<ul class="sidebar" style="background-color: white; padding: 0; margin: 0; text-align: center; border-right: 1px solid #ccc; height: 100vh; position: absolute;">
+			<div style="padding-top: 55px" align="center">
+				<!-- First Character from the database goes here -->
+				<i class="color-circle black">P</i>
+			</div>
+			<li><h3>First Name</h3></li>
+			<li><h3>Last Name</h3></li>
+			<li><a href="mailto:email" class="black-hover"><h3>Email</h3></a></li>
+			<li><a href="http://facebook.com/facebookurl" class="black-hover"><h3>Facebook</h3></a></li>
+			<li><button type="navigate" onclick="window.location = 'entry.php'" class="btn black m-top" style="border: 0;">New Entry</button></li>
+			<li><button type="submit" class="btn black m-top" style="border: 0;">Logout</button></li>
+
+		</ul>
+		<ul class="navbar" style="background-color: white; padding: 0; text-align: center; border-bottom: 1px solid #ccc; width: 100vw; position: absolute">
+			<!-- THIS IS WHERE YOU PUT PEOPLE WHO SCORED SIMILARLY BASED OFF OF SCORE AND CONTENT -->
+			<li><img src="header.png" class="p-left" style="position: absolute; left: 0px; top: 0px; width: 125px;"><h3 class="p-right" style="position: absolute; right: 0px; top: 0px;">Welcome <i>YOUR NAME GOES HERE</i></h3></li>
+		</ul>
+
+		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">
+			<a href="entry.php/id=?WHATEVERTHEIDIS">
+				<div class="col c-1-1 padding-center m-right" style="border: 1px solid #ccc; width: 1190px;">
+					<h3 style="padding-left: 10px;"><strong>10/8/2016</strong> -- THIS IS WHERE YOU WOULD PUT THE KEYWORD SUMMARY</h3>
+				</div><br/>
+			</a>
+			<a href="entry.php/id=?WHATEVERTHEIDIS">
+				<div class="col c-1-1 padding-center m-right" style="border: 1px solid #ccc; width: 1190px;">
+					<h3 style="padding-left: 10px;"><strong>10/7/2016</strong> -- THIS IS WHERE YOU WOULD PUT THE KEYWORD SUMMARY</h3>
+				</div>
+			</a>
 		</div>
-		<!-- Main Quill library -->
-		<script src="http://cdn.quilljs.com/1.0.6/quill.js" type="text/javascript"></script>
-		<script src="http://cdn.quilljs.com/1.0.6/quill.min.js" type="text/javascript"></script>
-		<script>
-			var toolbarOptions = [
-			  ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
-			  ['blockquote', 'code-block'],
-
-			  [{ 'header': 1 }, { 'header': 2 }],               // custom button values
-			  [{ 'list': 'ordered'}, { 'list': 'bullet' }],
-			  [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
-			  [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
-			  [{ 'direction': 'rtl' }],                         // text direction
-
-			  [{ 'size': ['small', false, 'large', 'huge'] }],  // custom dropdown
-			  [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
-
-			  [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
-			  [{ 'font': [] }],
-			  [{ 'align': [] }],
-
-			  ['clean'],                                         // remove formatting button
-			  [{'save': []}],                                         // remove formatting button
-			];
-
-			var quill = new Quill('#editor', {
-			  modules: {
-			    toolbar: toolbarOptions
-			  },
-			  theme: 'snow'
-			});
-
-		</script>
 	</body>
 </html>

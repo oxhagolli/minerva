@@ -42,6 +42,7 @@
 						}
 						$sql = mysqli_query($con, "INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
 						if(!$sql) {
+						    session_destroy();
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 					    }
 					    session_start();
@@ -51,6 +52,7 @@
 				}
 				else {
 					mysqli_close($con);
+					session_destroy();
 					header('Location: http://13.66.61.179');
 				}
 				mysqli_close($con);

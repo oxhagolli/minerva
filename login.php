@@ -16,17 +16,19 @@
 	</head>
 	<body>
 		<?php
-			if(isset($_SESSION['email']))
+			if(isset($_SESSION['email'])) {
 				header('Location: http://13.66.61.179/');
+		    }
 		?>
+		<img src="header.png" class="p-left" style="width: 125px; top: 0px; left: 0px;">
 		<div class="section group">
 			<div class="col c-1-1 padding-center" align="center">
 				<form action="authenticate.php" method="post">
 					<h1>Login</h1>
 					<input type="text" placeholder="Email" class="textbox round m-bottom m-16" />
 					<input type="text" placeholder="Password" class="textbox round m-bottom m-16" />
-					<input type="submit" name="action" value="Login" class="btn green border-dark-green m-top" />
-					<a href="register.html" class="btn blue border-dark-blue m-top">Register</a>
+					<input type="submit" name="action" value="Login" class="btn black m-top" style="border: 0;" />
+					<a href="register.html" class="btn black m-top" style="border: 0;">Register</a>
 				</form>
 			</div>
 		</div>
