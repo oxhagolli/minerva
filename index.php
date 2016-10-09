@@ -39,17 +39,32 @@
 			<li><img src="header.png" class="p-left" style="position: absolute; left: 0px; top: 0px; width: 125px;"><h3 class="p-right" style="position: absolute; right: 0px; top: 0px;">Welcome <i><?php echo $_SESSION['first']; ?></i></h3></li>
 		</ul>
 
-		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">
-			<a href="entry.php/id=?WHATEVERTHEIDIS">
-				<div class="col c-1-1 padding-center m-right" style="border: 1px solid #ccc; width: 1190px;">
-					<h3 style="padding-left: 10px;"><strong>10/8/2016</strong> -- THIS IS WHERE YOU WOULD PUT THE KEYWORD SUMMARY</h3>
-				</div><br/>
-			</a>
-			<a href="entry.php/id=?WHATEVERTHEIDIS">
-				<div class="col c-1-1 padding-center m-right" style="border: 1px solid #ccc; width: 1190px;">
-					<h3 style="padding-left: 10px;"><strong>10/7/2016</strong> -- THIS IS WHERE YOU WOULD PUT THE KEYWORD SUMMARY</h3>
-				</div>
-			</a>
+		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">\
+			<?php
+			    $host = getenv('localhost');
+            	$name = getenv('DB_NAME');
+                $user = getenv('DB_USER');
+            	$pass = getenv('DB_PASS');
+            	$con = new mysqli($host, $user, $pass, $name);
+            	if($con) {
+            	    $superemail = md5($_SESSION['email']);
+            	    $sql = $con->query("SELECT time, keywords FROM tb_$superemail;");
+            		foreach($sql->fetch_array() as $row) {
+            		    $tstamp = $row[0];
+            		    $keywords = $row[1];
+            		    echo "<a href='entry.php/id=?$tstamp'>";
+            		    echo "<div class='col c-1-1 padding-center m-right' style='border: 1px solid #ccc; width: 1190px;'>";
+            		    echo "<h3 style='padding-left:10px;'><strong>$tstamp</strong> $keywords </h3>";
+            		    echo "</div><br/>";
+            		    echo "</a>";
+            		}
+            	}
+            	else {
+            		echo "Error: Unable to connect to MySQL.";
+            		echo "Error no: " . mysqli_connect_errno();
+            		echo "Error: " . mysqli_connect_error();
+            	}
+			?>
 		</div>
 	</body>
 </html>
