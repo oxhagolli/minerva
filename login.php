@@ -16,6 +16,7 @@
 	</head>
 	<body>
 		<?php
+		    session_start();
 			if(isset($_SESSION['email'])) {
 				header('Location: http://13.66.61.179/');
 		    }
@@ -30,7 +31,15 @@
 					<input type="submit" name="action" value="Login" class="btn black m-top" style="border: 0;" />
 					<a href="register.html" class="btn black m-top" style="border: 0;">Register</a>
 				</form>
+                <?php
+                    if (isset($_GET['error'])){
+                        echo "<p style='color:red;text-align:center;'>An error occurred while logging in.</p>";
+                    }
+                ?>
 			</div>
 		</div>
+		<?php
+            session_destroy();
+        ?>
 	</body>
 </html>

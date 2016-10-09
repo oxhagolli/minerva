@@ -6,6 +6,7 @@
 	</head>
 	<body>
 		<?php
+		    session_start();
 			if(isset($_SESSION['email'])) {
 				header('Location: http://13.66.61.179/');
 			}

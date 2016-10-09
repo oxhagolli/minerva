@@ -16,8 +16,8 @@
 	</head>
 	<body>
 	    <?php
-	        start_session();
-            if(isset($_SESSION['email'])) {
+	        session_start();
+            if(!isset($_SESSION['email'])) {
                 header('Location: http://13.66.61.179/login.php');
             }
         ?>
