@@ -32,6 +32,11 @@
                     <input type="submit" name="action" value="Register" class="btn black m-top" style="border: 0;">
                     <a href="login.html" class="btn black m-top" style="border: 0;">Login</a>
                 </form>
+                <?php
+                    if (isset($_GET['error'])){
+                        echo "<p style='color:red;text-align:center;'>An error occurred while registering.</p>";
+                    }
+                ?>
 			</div>
 		</div>
 	</body>
