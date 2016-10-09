@@ -25,6 +25,7 @@
 						$sql = mysqli_query($con, "SELECT email, password FROM users WHERE email='$email' AND password='$pass';");
 						$check = mysqli_num_rows($sql);
 						if($check > 0) {
+						    session_start();
 							$_SESSION['email']=$email;
 							header('Location: http://13.66.61.179/');
 						}
@@ -43,6 +44,7 @@
 						if(!$sql) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 					    }
+					    session_start();
 						$_SESSION['email'] = $email;
 						header('Location: http://13.66.61.179/');
 					}
