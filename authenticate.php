@@ -27,6 +27,7 @@
 						}
 						$sql = $con->query("SELECT * FROM users WHERE email='$email' AND password='$pass';");
 						if ($sql->num_rows > 0) {
+						    $_SESSION['first']=$sql->fetch_row()[1];
 							$_SESSION['email']=$email;
 							header('Location: http://13.66.61.179/');
 							exit();
@@ -50,6 +51,7 @@
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 							exit();
 					    }
+						$_SESSION['first'] = $fname;
 						$_SESSION['email'] = $email;
 						header('Location: http://13.66.61.179/');
 						exit();

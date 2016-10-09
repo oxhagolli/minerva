@@ -36,7 +36,7 @@
 		</ul>
 		<ul class="navbar" style="background-color: white; padding: 0; text-align: center; border-bottom: 1px solid #ccc; width: 100vw; position: absolute">
 			<!-- THIS IS WHERE YOU PUT PEOPLE WHO SCORED SIMILARLY BASED OFF OF SCORE AND CONTENT -->
-			<li><img src="header.png" class="p-left" style="position: absolute; left: 0px; top: 0px; width: 125px;"><h3 class="p-right" style="position: absolute; right: 0px; top: 0px;">Welcome <i>YOUR NAME GOES HERE</i></h3></li>
+			<li><img src="header.png" class="p-left" style="position: absolute; left: 0px; top: 0px; width: 125px;"><h3 class="p-right" style="position: absolute; right: 0px; top: 0px;">Welcome <i><?php echo $_SESSION['first']; ?></i></h3></li>
 		</ul>
 
 		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">
