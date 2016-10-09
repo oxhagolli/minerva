@@ -6,8 +6,9 @@
 	</head>
 	<body>
 		<?php
-			if(isset($_SESSION['email']))
+			if(isset($_SESSION['email'])) {
 				header('Location: http://13.66.61.179/');
+			}
 			$host = getenv('localhost');
 			$name = getenv('DB_NAME');
 			$user = getenv('DB_USER');
@@ -39,8 +40,9 @@
 							header('Location: http://13.66.61.179/register.php?error="format"');
 						}
 						$sql = mysqli_query($con, "INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
-						if(!$sql)
+						if(!$sql) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
+					    }
 						$_SESSION['email'] = $email;
 						header('Location: http://13.66.61.179/');
 					}
