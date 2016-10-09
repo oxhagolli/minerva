@@ -9,6 +9,7 @@
 		    session_start();
 			if(isset($_SESSION['email'])) {
 				header('Location: http://13.66.61.179/');
+				exit();
 			}
 			$host = getenv('localhost');
 			$name = getenv('DB_NAME');
@@ -22,14 +23,17 @@
 					if($_POST['action'] == 'Login') {
 						if(empty($email) || empty($pass)) {
 							header('Location: http://13.66.61.179/login.php?error="format"');
+							exit();
 						}
 						$sql = $con->query("SELECT email, password FROM users WHERE email='$email' AND password='$pass';");
 						if ($sql->num_rows > 0) {
 							$_SESSION['email']=$email;
 							header('Location: http://13.66.61.179/');
+							exit();
 						}
 						else {
 							header('Location: http://13.66.61.179/login.php?error="auth"');
+							exit();
 						}
 					}
 					else {
@@ -38,19 +42,23 @@
 						$url = $_POST['url'];
 						if(empty($email) || empty($pass) || empty($fname) || empty($lname) || empty($url)) {
 							header('Location: http://13.66.61.179/register.php?error="format"');
+							exit();
 						}
 						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url');");
 
 						if($sql === false) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
+							exit();
 					    }
-						//$_SESSION['email'] = $email;
-						//header('Location: http://13.66.61.179/');
+						$_SESSION['email'] = $email;
+						header('Location: http://13.66.61.179/');
+						exit();
 					}
 				}
 				else {
 				    echo "<script>console.log('OH BOY')</script>";
-					//header('Location: http://13.66.61.179');
+					header('Location: http://13.66.61.179');
+					exit();
 				}
 			}
 			else {
