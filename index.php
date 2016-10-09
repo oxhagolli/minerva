@@ -47,8 +47,8 @@
             	$pass = getenv('DB_PASS');
             	$con = new mysqli($host, $user, $pass, $name);
             	if($con) {
-            	    $superemail = md5($_SESSION['email']);
-            	    $sql = $con->query("SELECT time, keywords FROM $_SESSION['first'];");
+            	    $tbl = $_SESSION['first'];
+            	    $sql = $con->query("SELECT time, keywords FROM $tbl;");
             		foreach($sql->fetch_array() as $row) {
             		    $tstamp = $row[0];
             		    $keywords = $row[1];
