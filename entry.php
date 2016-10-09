@@ -74,16 +74,16 @@
 		quill.setContents({"ops":[{"attributes":{"underline":true},},{"attributes":{"header":1},"insert":"\n"},{"insert":"\n
 		<?php
 		    if ($_GET['id'] == 1) {
-		        echo "ONE";
+		        echo 'ONE';
 		    }
 		    elseif ($_GET['id'] == 2) {
-		        echo "TWO";
+		        echo 'TWO';
 		    }
 		    elseif ($_GET['id'] == 3) {
-		        echo "THREE";
+		        echo 'THREE';
 		    }
 		    elseif ($_GET['id'] == 4) {
-		        echo "FOUR";
+		        echo 'FOUR';
 		    }
 		?>
 		\n"}]});
