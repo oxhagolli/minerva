@@ -71,8 +71,6 @@
 		  },
 		  theme: 'snow'
 		});
-		<?php $string = "HELLO" ?>
-		quill.setContents({"ops":[{"insert":"<?php $string ?>"}]});
 
 		var form = document.querySelector('form');
 		form.onsubmit = function() {
@@ -85,5 +83,19 @@
 		  return false;
 		};
 	</script>
+	<?php
+        if($_GET['id'] === 1) {
+            echo = "<script>quill.setContents('First off let me address some of the issues other people have been having. When people are saying they are upset that it wont fit all the way around their huge TVs, thats because you are making the square to big... If you want the lights to be across the top, bottom, and both sides then you wont want to put the lights all the way to the edge of the TV, you will need to bring them closer to the center of the TV. Personally I kept the light about 4 inches from the edge of the TV and was able to cover both sides and across the top completely. This is working just fine for me with no dark spots around the TV whatsoever. Another problem people are having is the strand not sticking to the TV. One of two things is happening: 1. they are trying to stick it onto a dust covered TV or 2. they did what I did and peeled off both the backing and the sticky strip. I went to peel off the backing for the sticky material and realized it wasnt sticking to my TV but the backing was catching the hairs on my arms and pulling it. I looked closer and the sticky material was pulling off of the light strand just as easily as I would imagine the backing should come off the sticky material. I placed the sticky material back onto the light strand and pulled off just the backing this time. It was so sticky that if you placed it in the wrong spot you would have to try pretty hard to pull it back off just to move it.')</script>";
+        }
+        if($_GET['id'] === 2) {
+            echo = '<script>quill.setContents('')</script>';
+        }
+        if($_GET['id'] === 3) {
+            echo = '<script>quill.setContents('')</script>';
+        }
+        if($_GET['id'] === 4) {
+            echo = '<script>quill.setContents('')</script>';
+        }
+    ?>
 </body>
 </html>
