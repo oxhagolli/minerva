@@ -24,12 +24,12 @@
 		<ul class="sidebar" style="background-color: white; padding: 0; margin: 0; text-align: center; border-right: 1px solid #ccc; height: 100vh; position: absolute;">
 			<div style="padding-top: 55px" align="center">
 				<!-- First Character from the database goes here -->
-				<i class="color-circle black">P</i>
+				<i class="color-circle black"><?php echo $_SESSION['first'][0]; ?></i>
 			</div>
-			<li><h3>First Name</h3></li>
-			<li><h3>Last Name</h3></li>
-			<li><a href="mailto:email" class="black-hover"><h3>Email</h3></a></li>
-			<li><a href="http://facebook.com/facebookurl" class="black-hover"><h3>Facebook</h3></a></li>
+			<li><h3><?php echo $_SESSION['first']; ?></h3></li>
+			<li><h3><?php echo $_SESSION['last']; ?></h3></li>
+			<li><a href="mailto:email" class="black-hover"><h3><?php echo $_SESSION['email']; ?></h3></a></li>
+			<li><a href="<?php echo $_SESSION['url']; ?>" class="black-hover"><h3>Facebook Profile</h3></a></li>
 			<li><button type="navigate" onclick="window.location = 'entry.php'" class="btn black m-top" style="border: 0;">New Entry</button></li>
 			<li><button type="submit" onclick="window.location = 'logout.php'" class="btn black m-top" style="border: 0;">Logout</button></li>
 
