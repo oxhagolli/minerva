@@ -47,7 +47,7 @@
 							header('Location: http://13.66.61.179/register.php?error="format"');
 							exit();
 						}
-						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url'); CREATE TABLE $email(id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, keywords VARCHAR(50), thejson TEXT);");
+						$sql = $con->query("INSERT INTO users (first_name, last_name, email, password, facebook_url) VALUES( '$fname', '$lname', '$email', '$pass', '$url'); CREATE TABLE $lname(id INT AUTO_INCREMENT PRIMARY KEY, reg_date TIMESTAMP, keywords VARCHAR(50), json TEXT);");
 
 						if(!$sql) {
 							header('Location: http://13.66.61.179/register.php?error="exists"');
