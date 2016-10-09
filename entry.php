@@ -71,7 +71,22 @@
 		  },
 		  theme: 'snow'
 		});
-		quill.setContents({"ops":[{"attributes":{"underline":true},"insert":"Hello "},{"attributes":{"underline":true,"bold":true},"insert":"World!"},{"attributes":{"header":1},"insert":"\n"},{"insert":"\n\nasdfasdfasdfasd\n"}]});
+		quill.setContents({"ops":[{"attributes":{"underline":true},},{"attributes":{"header":1},"insert":"\n"},{"insert":"\n
+		<?php
+		    if ($_GET['id'] == 1) {
+		        echo "ONE";
+		    }
+		    elseif ($_GET['id'] == 2) {
+		        echo "TWO";
+		    }
+		    elseif ($_GET['id'] == 3) {
+		        echo "THREE";
+		    }
+		    elseif ($_GET['id'] == 4) {
+		        echo "FOUR";
+		    }
+		?>
+		\n"}]});
 
 		var form = document.querySelector('form');
 		form.onsubmit = function() {
