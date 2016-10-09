@@ -39,7 +39,7 @@
 			<li><img src="header.png" class="p-left" style="position: absolute; left: 0px; top: 0px; width: 125px;"><h3 class="p-right" style="position: absolute; right: 0px; top: 0px;">Welcome <i><?php echo $_SESSION['first']; ?></i></h3></li>
 		</ul>
 
-		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">\
+		<div class="section group" style="position: absolute; right: 0px; padding-top: 75px;">
 			<?php
 			    $host = getenv('localhost');
             	$name = getenv('DB_NAME');
@@ -48,7 +48,7 @@
             	$con = new mysqli($host, $user, $pass, $name);
             	if($con) {
             	    $superemail = md5($_SESSION['email']);
-            	    $sql = $con->query("SELECT time, keywords FROM tb_$superemail;");
+            	    $sql = $con->query("SELECT time, keywords FROM $_SESSION['first'];");
             		foreach($sql->fetch_array() as $row) {
             		    $tstamp = $row[0];
             		    $keywords = $row[1];

@@ -53,8 +53,7 @@
 							header('Location: http://13.66.61.179/register.php?error="exists"');
 							exit();
 					    }
-                        $superemail = md5($email);
-					    $response = $con->query("CREATE TABLE tb_$superemail ((id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
+					    $response = $con->query("CREATE TABLE $fname ((id INT AUTO_INCREMENT PRIMARY KEY, time TEXT, keywords VARCHAR(50), json TEXT);");
 					    if(!response) {
 					        header('Location: http://13.66.61.179/register.php?error="bad_pass"');
                             exit();
@@ -68,7 +67,6 @@
 					}
 				}
 				else {
-				    echo "<script>console.log('OH BOY')</script>";
 					header('Location: http://13.66.61.179');
 					exit();
 				}
